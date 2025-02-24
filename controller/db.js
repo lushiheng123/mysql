@@ -21,10 +21,10 @@ export const try_connect = async () => {
   }
 };
 
-export const executeQuery = async (query) => {
+export const executeQuery = async (query, params) => {
   try {
     const connection = await mysql.createConnection(dbConfig);
-    const [rows] = await connection.execute(query);
+    const [rows] = await connection.execute(query, params);
     await connection.end();
     return rows;
   } catch (error) {
