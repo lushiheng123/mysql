@@ -376,4 +376,25 @@ reader.writeFile(file, "./data.xlsx");
 
 ## ![alt text](README_Images/README/image-8.png)
 
-# 6. 既然我们可以读出 excel 文件了，就可以将他导入到数据库中，
+# 6. 既然我们可以读出 excel 文件了，下一步的思路就是:
+
+- 选择好数据库(在 env 里面选择)
+- 创建/选择 _table（controller\query_get_current_table.js）_ 和其中的字段 key&value
+- 导入一部分的数据库(比如 10 行)测试
+- 导入全部的数据
+
+> 已知我们的数据格式是这样
+> ![alt text](README_Images/README/image-9.png)
+> 根据 AI 的建议，创建的数据库
+
+```sql
+CREATE TABLE IDCARD (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    create_time DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Create Time',
+    name VARCHAR(255) NOT NULL COMMENT 'Name',
+    id_card_number VARCHAR(20) NOT NULL COMMENT 'ID Card Number',
+    birth_date DATE NOT NULL COMMENT 'Birth Date',
+    age INT COMMENT 'Age',
+    email VARCHAR(255) COMMENT 'Email Address'
+) COMMENT 'Table for storing ID card information';
+```
