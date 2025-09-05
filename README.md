@@ -7,7 +7,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin git@github.com:lushiheng123/mysql_with_node.git
+git remote add origin git@github.com:lushiheng123/mysql.git
 git push -u origin main
 ```
 
